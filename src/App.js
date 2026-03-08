@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const PRODUCT_API =
+  process.env.REACT_APP_PRODUCT_API || "http://localhost:3001";
+const ORDER_API = process.env.REACT_APP_ORDER_API || "http://localhost:3002";
+
 function App() {
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    // Fetch products
     axios
-      .get("http://localhost:3001/products")
+      .get(`${PRODUCT_API}/products`)
       .then((res) => setProducts(res.data))
       .catch((err) => console.error(err));
   }, []);
 
   const createOrder = (productId) => {
     axios
-      .post("http://localhost:3002/orders", {
+      .post(`${ORDER_API}/orders`, {
         productId: productId,
         quantity: 1,
       })

@@ -21,12 +21,16 @@ npm install
 
 ## Environment Variables
 
-Create a `.env` file:
+Copy the example file and fill in your values:
 
+```bash
+cp .env.example .env
 ```
-REACT_APP_PRODUCT_API=http://localhost:3001
-REACT_APP_ORDER_API=http://localhost:3002
-```
+
+| Variable              | Default               | Description         |
+| --------------------- | --------------------- | ------------------- |
+| REACT_APP_PRODUCT_API | http://localhost:3001 | Product service URL |
+| REACT_APP_ORDER_API   | http://localhost:3002 | Order service URL   |
 
 ## Running Locally
 
@@ -35,6 +39,12 @@ npm start
 ```
 
 App runs on http://localhost:3000
+
+## Running Tests
+
+```bash
+npm test
+```
 
 ## Building for Production
 
