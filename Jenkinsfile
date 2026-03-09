@@ -7,7 +7,7 @@ pipeline {
 
   environment {
     SERVICE_NAME  = 'ecommerce-frontend'
-    IMAGE_NAME    = 'abhyas01/ecommerce-frontend'
+    IMAGE_NAME    = '01abhyas/ecommerce-frontend'
     SONAR_PROJECT = 'ecommerce-frontend'
   }
 
