@@ -74,14 +74,14 @@ pipeline {
       steps {
         sh 'npx playwright install --with-deps chromium'
         sh """
-          sed 's|abhyas01/ecommerce-frontend:latest|abhyas01/ecommerce-frontend:${env.DOCKER_TAG}|g' \
+          sed 's|01abhyas/ecommerce-frontend:latest|01abhyas/ecommerce-frontend:${env.DOCKER_TAG}|g' \
             docker-compose.test.yml > docker-compose.e2e.yml
         """
 
         sh 'docker compose -f docker-compose.e2e.yml up -d --wait'
         sh 'sleep 5'
 
-        sh 'FRONTEND_URL=http://localhost:3000 npx playwright test'
+        sh 'FRONTEND_URL=http://localhost:13000 npx playwright test'
       }
       post {
         always {
