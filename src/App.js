@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const PRODUCT_API =
-  process.env.REACT_APP_PRODUCT_API || "http://localhost:3001";
-const ORDER_API = process.env.REACT_APP_ORDER_API || "http://localhost:3002";
+const PRODUCT_API = "";
+const ORDER_API = "";
 
 function App() {
   const [products, setProducts] = useState([]);
