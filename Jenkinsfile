@@ -27,6 +27,12 @@ pipeline {
       steps { sh 'npm install' }
     }
 
+    stage('Lint') {
+      steps {
+        dir('src') { sh 'npm run lint' }
+      }
+    }
+
     stage('Unit Test') {
       steps { sh 'npm run test:ci' }
       post {
